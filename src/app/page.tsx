@@ -1,5 +1,9 @@
-import Image from 'next/image';
+import Hero from '@/components/Hero/Hero';
 
 export default function Home() {
-  return <main>asd</main>;
+  return (
+    <div className="p-4">
+      <Hero />
+    </div>
+  );
 }
