@@ -2,7 +2,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import SubHeading from '@/components/SubHeading/SubHeading';
+import SubHeading from '@/components/shared/Text/SubHeading/SubHeading';
+import { Content } from 'antd/es/layout/layout';
+import NavBar from '@/components/NavBar/NavBar';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,33 +32,26 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <div className="absolute inset-0 -z-10 h-full w-full text-white items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
-          <header className="flex flex-row justify-between px-4 py-4 w-full h-[60px] bg-transparent">
-            <div>
-              <SubHeading text="Afaq Khan" bold={true} special={true} />
-            </div>
-            <div className="flex flex-row gap-x-4 text-[20px]">
-              <span>
-                <SubHeading text="Header" />
-              </span>
-              <span>
-                <SubHeading text="Services" />
-              </span>
-              <span>
-                <SubHeading text="Projects" />
-                <h1></h1>
-              </span>
-              <span>
-                <SubHeading text="About Me" />
-              </span>
-              <span>
-                <SubHeading text="Footer" />
-              </span>
-            </div>
+        <div className="h-full w-full top-0 left-0 -z-10 fixed">
+          <div className="absolute inset-0 -z-10 h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]" />
+        </div>
+        <div className="relative mx-auto h-screen w-full text-white Mochiy_Pop_One">
+          <header className="flex items-center w-full h-[40px] bg-transparent py-2">
+            <NavBar />
           </header>
-          {children}
+          <div className="flexCenter w-full h-[calc(100vh-60px)] flex-wrap">
+            {children}
+          </div>
         </div>
       </body>
     </html>
   );
+}
+{
+  /*h-[calc(100vh-60px)]
+
+ <div className="absolute inset-0 -z-10 h-full w-full text-white items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"> */
+}
+{
+  /* </div> */
 }
